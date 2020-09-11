@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% block body %}
+<br>
+<h1>Lista de Voluntários</h1>
+<br>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Sobrenome</th>
+      <th scope="col">Bairro</th>
+      <th scope="col">Cidade</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for list in lista %}
+    <tr>
+      <th scope="row">{{ list.id }}</th>
+      <td>{{ list.name }}</td>
+      <td>{{ list.last_name }}</td>
+      <td>{{ list.neighborhood }}</td>
+      <td>{{ list.city }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock body %}

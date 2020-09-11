@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% block body %}
+<br>
+<h1>Lista de Ações</h1>
+<br>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nome da Ação</th>
+      <th scope="col">Nome da Instituição</th>
+      <th scope="col">Cidade</th>
+      <th scope="col">Bairro</th>
+      <th scope="col">Endereço</th>
+      <th scope="col">Descrição</th>
+      <th scope="col">Voluntário Incluso</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for list in lista %}
+    <tr>
+      <th scope="row">{{ list.id }}</th>
+      <td>{{ list.name_action }}</td>
+      <td>{{ list.institution_organizing }}</td>
+      <td>{{ list.city }}</td>
+      <td>{{ list.neighborhood }}</td>
+      <td>{{ list.address }}</td>
+      <td>{{ list.description }}</td>
+      <td>{{ list.incluir_voluntario }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock body %}
